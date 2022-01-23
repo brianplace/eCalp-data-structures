@@ -1,7 +1,7 @@
 {
-  "name": "typescript-library-template",
+  "name": "ecalp-data-structures",
   "version": "1.0.0",
-  "description": "",
+  "description": "Collection of data structures",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -11,19 +11,24 @@
     "test": "mocha -r ts-node/register 'src/tests/*.ts'",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brianplace/typescript-library-template.git"
+    "url": "git+https://github.com/brianplace/eCalp-data-structures.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brianplace/typescript-library-template/issues"
+    "url": "https://github.com/brianplace/eCalp-data-structures/issues"
   },
-  "homepage": "https://github.com/brianplace/typescript-library-template#readme",
+  "homepage": "https://github.com/brianplace/eCalp-data-structures#readme",
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
