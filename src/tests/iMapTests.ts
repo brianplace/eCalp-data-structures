@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { IMap, Map } from '../iMap';
+import { IMap, Map } from '../classes/iMap';
 
 describe('iMap Tests', () => {
   it('brand new iMap isEmpty returns true', () => {
